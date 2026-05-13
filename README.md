@@ -6,8 +6,6 @@ API REST para gerenciamento de softwares e suas versões, desenvolvida utilizand
 
 ## 🏗️ Arquitetura
 
-O projeto segue uma arquitetura em camadas inspirada em **Clean Architecture**, separando responsabilidades em projetos distintos:
-
 ```
 software-version-manager/
 ├── SoftwareVersionManager            # Camada de apresentação (API, Controllers)
