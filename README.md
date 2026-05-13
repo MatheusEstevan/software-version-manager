@@ -53,12 +53,15 @@ A documentação Swagger estará em `http://localhost:8080/swagger`.
 | `PUT` | `/api/Software` | Atualiza um software existente |
 | `DELETE` | `/api/Software/{id}` | Remove um software |
 
-#### Exemplo de payload (POST/PUT)
+#### Criar um novo software (`POST /api/Software`)
+
+Use o `id` retornado na resposta ao cadastrar versões em `/api/SoftwareVersion`.
+
 ```json
 {
-  "name": "VS Code",
-  "description": "Editor de código da Microsoft",
-  "author": "Microsoft"
+  "name": "Meu produto",
+  "description": "Sistema interno de gestão",
+  "author": "Minha empresa"
 }
 ```
 
@@ -74,14 +77,32 @@ A documentação Swagger estará em `http://localhost:8080/swagger`.
 | `PUT` | `/api/SoftwareVersion` | Atualiza uma versão existente |
 | `DELETE` | `/api/SoftwareVersion/{id}` | Remove uma versão |
 
-#### Exemplo de payload (POST/PUT)
+#### Adicionar uma versão a um software (`POST /api/SoftwareVersion`)
+
+O `softwareId` deve ser o ID de um software já existente.
+
 ```json
 {
-  "versionNumber": "1.85.0",
-  "releaseDate": "2024-01-15T00:00:00",
+  "versionNumber": "2.4.1",
+  "releaseDate": "2025-06-01T00:00:00",
   "softwareId": 1,
   "isDeprecated": false,
-  "description": "Versão estável com suporte a extensões de IA"
+  "description": "Correções de segurança e melhorias de desempenho"
+}
+```
+
+#### Atualizar uma versão para deprecated (`PUT /api/SoftwareVersion`)
+
+Envie o `id` da versão (obtido no cadastro ou no `GET`) e o corpo completo; marque `isDeprecated` como `true`.
+
+```json
+{
+  "id": 3,
+  "versionNumber": "1.0.0",
+  "releaseDate": "2024-01-15T00:00:00",
+  "softwareId": 1,
+  "isDeprecated": true,
+  "description": "Descontinuada; migrar para a série 2.x"
 }
 ```
 
