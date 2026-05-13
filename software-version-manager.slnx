@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+  <Project Path="SoftwareVersionManager.Data/SoftwareVersionManager.Data.csproj" Id="935fbdca-74c3-4d26-97b2-ed9e7bff3bb8" />
+  <Project Path="SoftwareVersionManager.Domain/SoftwareVersionManager.Domain.csproj" Id="ee5baddd-5ef3-4b81-8eb5-1be0942b952b" />
+  <Project Path="SoftwareVersionManager.Entities/SoftwareVersionManager.Entities.csproj" Id="9e966577-398b-433b-9522-deabd2cc2c10" />
+  <Project Path="SoftwareVersionManager/SoftwareVersionManager.csproj" />
+  <Project Path="SoftwareVersionManager.Test/SoftwareVersionManager.Test.csproj" />
+</Solution>

@@ -1,0 +1,17 @@
+services:
+  softwareversionmanager:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=SoftwareVersionManagerDb;User Id=sa;Password=Admin123!;TrustServerCertificate=True;
+    ports:
+      - "8080"
+      - "8081"
+
+  sqlserver:
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Admin123!
+    ports:
+      - "1433:1433"

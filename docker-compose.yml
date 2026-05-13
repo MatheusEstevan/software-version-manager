@@ -1,0 +1,11 @@
+services:
+  softwareversionmanager:
+    image: ${DOCKER_REGISTRY-}softwareversionmanager
+    build:
+      context: .
+      dockerfile: SoftwareVersionManager/Dockerfile
+    depends_on:
+      - sqlserver
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
